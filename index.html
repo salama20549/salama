@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container-md py-5">
+      <h1 class="text-white mb-5">product mangement system</h1>
+      <div class="form-groub w-75 mx-auto">
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="productName"
+            placeholder="productName"
+            oninput="validateProductInput(this)"
+          />
+          <div class="alert alert-danger py-1 mt-2 d-none">
+            <small>please enter frist letter capital</small>
+          </div>
+          <label for="productName">product Name</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="number"
+            class="form-control"
+            id="productPrice"
+            oninput="validateProductInput(this)"
+            placeholder="productPrice"
+          />
+          <div class="alert alert-danger py-1 mt-2 d-none">
+            <small>please enter correct price</small>
+          </div>
+          <label for="productPrice">product Price</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            list="categories"
+            type="text"
+            class="form-control"
+            id="productCategory"
+            placeholder="productCategory"
+            oninput="validateProductInput(this)"
+
+          />
+          <div class="alert alert-danger py-1 mt-2 d-none">
+            <small>please choose from category</small>
+          </div>
+          <label for="productCategory">product Category</label>
+        </div>
+        <datalist id="categories">
+          <option value="tv" />
+          <option value="phone" />
+          <option value="screens" />
+          <option value="laptob" />
+          <option value="others" />
+        </datalist>
+        <div class="form-floating mb-3">
+          <textarea
+            class="form-control"
+            id="productDesc"
+            placeholder="productDesc"
+            oninput="validateProductInput(this)"
+          ></textarea>
+          <div class="alert alert-danger py-1 mt-2 d-none">
+            <small>please enter right description</small>
+          </div>
+          <label for="productDesc">product Description</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="file"
+            class="form-control"
+            accept="Image/*"
+            id="productImage"
+            placeholder="productImage"
+          />
+          <label for="productImage">product Image</label>
+        </div>
+        <button disabled id="addBtn" onclick="addProduct()" class="btn btn-primary">
+          Add Product
+        </button>
+        <button id="updateBtn" onclick="updateProduct()" class="btn btn-info d-none">
+       update product
+        </button>
+       
+      </div>
+    </div>
+    <div class="container">
+      <div class="form-floating mb-3">
+        <input
+        oninput="search(this.value)"
+          type="search"
+          class="form-control"
+          id="search"
+          placeholder="search"
+        />
+        <label for="search">Search....</label>
+      </div>
+    </div>
+    <div class="container py-5">
+      <div class="row gy-5" id="myData"></div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
